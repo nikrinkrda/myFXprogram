@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.example.sample.animations.Shake;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,8 +53,11 @@ public class HelloController {
                 System.out.println("Введите правильно логин или пароль.");
         });
 
-        loginSignUpButton.setOnAction(event -> {
-            openNewScene("/com/example/sample/signUp.fxml");
+        loginSignUpButton.setOnAction(new EventHandler(){
+            @Override
+            public void handle(Event event) {
+                openNewScene("/com/example/sample/signUp.fxml");
+            }
         });
 
     }
@@ -84,8 +90,8 @@ public class HelloController {
     }
 
     public void openNewScene(String window){
-        loginSignUpButton.getScene().getWindow().hide();
-        //authSigInButton.getScene().getWindow().hide();
+        //loginSignUpButton.getScene().getWindow().hide();
+        authSigInButton.getScene().getWindow().hide();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
