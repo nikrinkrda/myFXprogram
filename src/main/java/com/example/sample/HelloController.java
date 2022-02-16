@@ -83,10 +83,10 @@ public class HelloController {
         }
         else {
             Shake userLoginAnim = new Shake( login_field);
-            Shake userPassAnim = new Shake(password_field);
-            userLoginAnim.playAnim();
-            userPassAnim.playAnim();
-        }
+        Shake userPassAnim = new Shake(password_field);
+        userLoginAnim.playAnim();
+        userPassAnim.playAnim();
+    }
     }
 
     public void openNewScene(String window){

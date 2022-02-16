@@ -6,6 +6,9 @@ import javafx.scene.Node;
 
 public class Shake {
     private TranslateTransition tt;
+    private TranslateTransition ii;
+
+
 
 
     public Shake(Node node){
@@ -18,6 +21,8 @@ public class Shake {
         //tt.setByY(-10f);
         tt.setCycleCount(3);
         tt.setAutoReverse(true);
+        ii = new TranslateTransition(Duration.millis(100), node);
+
     }
     public void playAnim() {
         tt.playFromStart();
